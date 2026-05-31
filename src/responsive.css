@@ -1,0 +1,735 @@
+/* ========================================
+   RESPONSIVE WEB DESIGN (RWD)
+   Break Points Organization:
+   - 1200px: Large screens - minor adjustments
+   - 1100px: Standard desktop adjustments
+   - 1000px: Sidebar to horizontal nav transition
+   - 900px: Hero panel adjustments
+   - 860px: Medium screens - major layout changes
+   - 760px: Tablets - full mobile preparation
+   - 700px: Diagrams fine-tuning
+   - 640px: Favorites layout
+   - 560px: Small phones - comprehensive rework
+   - 520px: Stat grid single column
+   - 420px: Extra small screens - minimum viable layout
+   ======================================== */
+
+/* ---------- 1200px 以下：卡片與內容稍微收斂 ---------- */
+@media (max-width: 1200px) {
+  .main-content {
+    padding: 28px;
+  }
+
+  .card-grid,
+  .team-grid,
+  .match-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .content-grid > .placeholder-card:last-child {
+    height: fit-content;
+    align-self: start;
+  }
+}
+
+/* ---------- 1100px 以下：團隊網格調整 ---------- */
+@media (max-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- 1000px 以下：側邊欄改成上方橫向導覽 ---------- */
+@media (max-width: 1000px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .sidebar-title {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .sidebar-nav::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.5);
+    border-radius: 999px;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .countdown-card {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .page-area {
+    min-width: 0;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 18px 24px;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+
+  .hero-section {
+    padding: 30px;
+  }
+
+  .hero-section h1,
+  .page h1 {
+    font-size: 2.1rem;
+  }
+
+  .page-heading-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+
+  .filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .history-intro-card,
+  .rules-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rules-tabs {
+    position: static;
+    top: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .rule-tab {
+    min-width: 190px;
+    flex: 0 0 auto;
+  }
+
+  .rules-content {
+    min-width: 0;
+  }
+
+  .settings-grid,
+  .favorites-layout,
+  .match-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .match-grid,
+  .match-detail-grid,
+  .favorites-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .match-detail-hero {
+    flex-direction: column;
+  }
+}
+
+/* ---------- 900px 以下：首頁英雄區塊調整 ---------- */
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-panel {
+    min-height: 240px;
+  }
+
+  .hero-panel-overlay strong {
+    font-size: 2.3rem;
+  }
+}
+
+/* ---------- 860px 以下：主要響應式調整 ---------- */
+@media (max-width: 860px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .nav-link {
+    white-space: nowrap;
+  }
+
+  .header {
+    height: auto;
+    padding: 18px 20px;
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-nav {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-panel {
+    align-items: stretch;
+  }
+
+  .filter-group,
+  .filter-group input,
+  .filter-group select {
+    width: 100%;
+  }
+
+  .page-heading-row {
+    flex-direction: column;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-title {
+    width: 100%;
+  }
+
+  .input-with-icon {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .section-heading-row {
+    flex-direction: column;
+  }
+
+  .history-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 760px 以下：手機版主要排版 ---------- */
+@media (max-width: 760px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .header-button {
+    flex: 1;
+    justify-content: center;
+    min-width: 140px;
+  }
+
+  .main-content {
+    padding: 18px;
+  }
+
+  .hero-section {
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .hero-section h1,
+  .page h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-description,
+  .page-description {
+    font-size: 0.95rem;
+  }
+
+  .card-grid,
+  .team-grid,
+  .match-grid,
+  .stat-grid,
+  .history-mini-stats,
+  .history-highlight-grid,
+  .card-rule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .team-hero,
+  .match-detail-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .team-hero-badge {
+    width: 76px;
+    height: 76px;
+    font-size: 1.6rem;
+  }
+
+  .tab-nav {
+    overflow-x: auto;
+    padding: 8px;
+  }
+
+  .tab-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .basic-table {
+    min-width: 640px;
+  }
+
+  .favorite-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .favorite-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .settings-option-row {
+    flex-direction: column;
+  }
+
+  .settings-option {
+    width: 100%;
+  }
+}
+
+/* ---------- 700px 以下：Rules diagrams 修正 ---------- */
+@media (max-width: 700px) {
+  .card-rule-grid,
+  .history-mini-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .pitch-diagram {
+    min-height: 280px;
+  }
+
+  .offside-diagram {
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .offside-line {
+    right: 210px;
+  }
+
+  .offside-line span {
+    font-size: 0.68rem;
+  }
+
+  .passer {
+    left: 38px;
+    top: 140px;
+  }
+
+  .ball {
+    left: 105px;
+    top: 158px;
+  }
+
+  .pass-line {
+    left: 130px;
+    top: 168px;
+    width: 230px;
+  }
+
+  .defender-one {
+    right: 212px;
+    top: 85px;
+  }
+
+  .defender-two {
+    right: 212px;
+    top: 205px;
+  }
+
+  .attacker.legal {
+    right: 260px;
+    top: 205px;
+  }
+
+  .attacker.offside {
+    right: 125px;
+    top: 65px;
+  }
+
+  .goalkeeper {
+    right: 62px;
+    top: 140px;
+  }
+
+  .offside-goal {
+    right: 10px;
+    top: 120px;
+    width: 48px;
+    height: 88px;
+    font-size: 0.85rem;
+  }
+
+  .legal-note,
+  .offside-note-text {
+    display: none;
+  }
+
+  .offside-diagram {
+    height: 320px;
+  }
+
+  .offside-goal {
+    right: 12px;
+    top: 118px;
+    width: 56px;
+    height: 86px;
+    font-size: 0.8rem;
+  }
+
+  .offside-line {
+    left: 45%;
+  }
+
+  .offside-line span {
+    top: 12px;
+    left: 8px;
+    font-size: 0.66rem;
+    max-width: 150px;
+    white-space: normal;
+  }
+
+  .player {
+    width: 46px;
+    height: 46px;
+    font-size: 0.72rem;
+  }
+
+  .passer {
+    left: 8%;
+    top: 138px;
+  }
+
+  .defender-one {
+    left: calc(45% - 23px);
+    top: 82px;
+  }
+
+  .defender-two {
+    left: calc(45% - 23px);
+    top: 202px;
+  }
+
+  .goalkeeper {
+    right: 74px;
+    top: 138px;
+  }
+
+  .attacker.legal {
+    left: 20%;
+    top: 222px;
+  }
+
+  .attacker.offside {
+    left: 58%;
+    top: 68px;
+  }
+
+  .ball {
+    left: calc(8% + 58px);
+    top: 151px;
+    font-size: 1.35rem;
+  }
+
+  .pass-line {
+    left: calc(8% + 84px);
+    top: 160px;
+    width: 42%;
+    height: 4px;
+  }
+
+  .legal-note,
+  .offside-note-text {
+    display: none;
+  }
+}
+
+/* ---------- 640px 以下：Favorites 佈局調整 ---------- */
+@media (max-width: 640px) {
+  .favorite-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .favorite-actions {
+    width: 100%;
+  }
+
+  .mini-link,
+  .remove-button {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* ---------- 560px 以下：小手機 ---------- */
+@media (max-width: 560px) {
+  .sidebar {
+    padding: 14px;
+  }
+
+  .sidebar-title h1 {
+    font-size: 1rem;
+  }
+
+  .sidebar-title p {
+    font-size: 0.78rem;
+  }
+
+  .countdown-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .countdown-days-number {
+    font-size: 2.2rem;
+  }
+
+  .countdown-time-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .countdown-time-item {
+    padding: 10px 6px;
+  }
+
+  .countdown-time-item span {
+    font-size: 1rem;
+  }
+
+  .header {
+    padding: 16px;
+  }
+
+  .main-content {
+    padding: 14px;
+  }
+
+  .hero-section,
+  .feature-card,
+  .placeholder-card,
+  .team-card,
+  .match-card,
+  .filter-panel,
+  .rule-main-card,
+  .rules-tabs,
+  .history-intro-card,
+  .summary-card {
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .hero-section h1,
+  .page h1 {
+    font-size: 1.55rem;
+  }
+
+  .page-description {
+    max-width: 100%;
+  }
+
+  .team-card-top,
+  .match-card-top {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .team-card-actions,
+  .match-links {
+    flex-direction: column;
+  }
+
+  .team-card-actions .primary-link,
+  .team-card-actions .favorite-button,
+  .match-links .primary-link,
+  .match-links .favorite-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rules-tabs {
+    padding: 14px;
+  }
+
+  .rule-tab {
+    min-width: 170px;
+    padding: 14px;
+  }
+
+  .rule-main-card {
+    padding: 20px;
+  }
+
+  .rule-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ranking-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .home-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-hero-actions > .primary-link,
+  .home-hero-actions > .secondary-button {
+    width: 100% !important;
+  }
+
+  .home-hero-panel strong {
+    font-size: 2.4rem;
+  }
+}
+
+/* ---------- 520px 以下：統計網格單欄 ---------- */
+@media (max-width: 520px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 420px 以下：極小螢幕 ---------- */
+@media (max-width: 420px) {
+  .header-actions {
+    flex-direction: column;
+  }
+
+  .header-button {
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .hero-section h1,
+  .page h1 {
+    font-size: 1.4rem;
+  }
+
+  .countdown-time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offside-diagram {
+    display: none;
+  }
+
+  .rules-content::after {
+    content: "Offside diagram is hidden on very small screens for better readability.";
+    display: block;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    background: var(--surface-soft);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+}
