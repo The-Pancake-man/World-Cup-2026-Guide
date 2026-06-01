@@ -2357,7 +2357,7 @@ a {
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
 }
 
-/* ---------- Hero polish ---------- */
+/*  Hero polish  */
 .hero-section {
   position: relative;
   overflow: hidden;
@@ -2417,7 +2417,7 @@ a {
   text-transform: uppercase;
 }
 
-/* ---------- Card polish ---------- */
+/* Card polish  */
 .feature-card,
 .placeholder-card,
 .summary-card,
@@ -2462,7 +2462,7 @@ a {
   letter-spacing: -0.025em;
 }
 
-/* ---------- Feature card icon effect ---------- */
+/*  Feature card icon effect  */
 .feature-card {
   position: relative;
   overflow: hidden;
