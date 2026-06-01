@@ -46,19 +46,25 @@ function HomePage() {
 
           <div className="home-hero-actions">
             <Link to="/teams" className="primary-link">
-              Explore Teams
+              {t("home.exploreTeams")}
             </Link>
+
             <Link to="/schedule" className="secondary-button">
-              View Schedule
+              {t("home.viewSchedule")}
             </Link>
           </div>
         </div>
-        <div className="home-hero-panel">
+        <a
+          href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="home-hero-panel"
+        >
         <div className="hero-panel-overlay">
-            <strong>2026</strong>
-            <p>Canada · Mexico · United States</p>
+          <strong>2026</strong>
+          <p>{t("home.hostCountries")}</p>
         </div>
-        </div>
+        </a>
       </div>
 
       <div className="card-grid">
