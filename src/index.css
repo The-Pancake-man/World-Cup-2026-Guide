@@ -2368,7 +2368,7 @@ a {
       rgba(15, 23, 42, 0.62),
       rgba(15, 23, 42, 0.72)
     ),
-    url("src/assets/images/home-hero-bg.jpg");
+    url("public/images/home-hero-bg.jpg");
 
   background-size: cover;
   background-position: center;
